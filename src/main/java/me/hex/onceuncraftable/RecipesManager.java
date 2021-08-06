@@ -115,7 +115,7 @@ public class RecipesManager implements Listener {
                 "LGB", new Material[] {Material.LAPIS_BLOCK, Material.DIAMOND, Material.FLINT_AND_STEEL}),
         END_ROD(new ItemStack(Material.END_ROD),
                 "   ", " B ", " D ",
-                "BD", new Material[] {Material.DIAMOND, Material.BLAZE_ROD}),
+                "DB", new Material[] {Material.DIAMOND, Material.BLAZE_ROD}),
         ENCH_CH(ItemStacks.ch(),
                 "IDI", "DBD", "IDI",
                 "IDB", new Material[] {Material.ICE, Material.DIAMOND, Material.BOOK}),
@@ -148,12 +148,12 @@ public class RecipesManager implements Listener {
         public final String materialKey;
         public final Material[] materials;
 
-        Keys(ItemStack material, String matrix1, String matrix2, String matrix3, String materialKey, Material[] materials) {
+        Keys(ItemStack item, String matrix1, String matrix2, String matrix3, String materialKey, Material[] materials) {
 
             matrix = new String[] {matrix1, matrix2, matrix3};
             this.materialKey = materialKey;
             this.materials = materials;
-            this.itemStack = new ItemStack(material);
+            this.itemStack = item;
         }
 
         public NamespacedKey getKey() {
@@ -211,6 +211,5 @@ public class RecipesManager implements Listener {
         for(Keys recipeKey: Keys.values()) {
             player.discoverRecipe(recipeKey.getKey());
         }
-
     }
 }

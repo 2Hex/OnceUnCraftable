@@ -125,22 +125,21 @@ public class ItemStacks {
         //-----------------------------
         ItemStack af = new ItemStack(Material.ENCHANTED_BOOK);
         EnchantmentStorageMeta afmeta = (EnchantmentStorageMeta) af.getItemMeta();
-        if(afmeta != null) {
+        if (afmeta != null) {
             afmeta.addStoredEnchant(Enchantment.FIRE_ASPECT, 1, true);
             af.setItemMeta(afmeta);
         }
         return af;
     }
-        public static ItemStack ch(){
+        public static ItemStack ch() {
             ItemStack ch = new ItemStack(Material.ENCHANTED_BOOK);
             EnchantmentStorageMeta chmeta = (EnchantmentStorageMeta) ch.getItemMeta();
-            if(chmeta != null) {
+            if (chmeta != null) {
                 chmeta.addStoredEnchant(Enchantment.CHANNELING, 1, true);
                 ch.setItemMeta(chmeta);
             }
             return ch;
 
         }
-
 }
 

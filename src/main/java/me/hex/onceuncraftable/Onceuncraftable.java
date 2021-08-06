@@ -4,7 +4,7 @@ import me.hex.onceuncraftable.commands.Changeconfig;
 import me.hex.onceuncraftable.events.Mineable;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Onceuncraftable extends JavaPlugin  {
+public final class Onceuncraftable extends JavaPlugin {
     @Override
     public void onEnable() {
 
@@ -15,6 +15,6 @@ public final class Onceuncraftable extends JavaPlugin  {
         saveDefaultConfig();
 
     }
-        }
+}
 
 

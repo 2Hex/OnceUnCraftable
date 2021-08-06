@@ -4,7 +4,7 @@ craft-enchants: true
 # (including the spawn egg)
 # Turn off second option if you do not want craftable enchants.
 # add a recipe to the disabled list to disable it.
-# Recipes are:
+# Recipes IDs in: https://www.spigotmc.org/resources/onceuncraftable.94632/
 disabled_recipes:
   -
   -

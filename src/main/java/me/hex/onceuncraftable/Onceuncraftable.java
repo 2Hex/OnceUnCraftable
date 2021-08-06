@@ -12,6 +12,7 @@ public final class Onceuncraftable extends JavaPlugin {
         getCommand("mineablespawners").setExecutor(new ChangeConfig(this));
         getCommand("craftenchants").setExecutor(new ChangeConfig(this));
         saveDefaultConfig();
+        getServer().getPluginManager().registerEvents(new RecipesManager(this), this);
 
     }
 }

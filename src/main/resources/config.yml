@@ -1,0 +1,5 @@
+mine-spawners-with-silk-touch: false
+craft-enchants: true
+#  turn on first option if you want players to be able to break spawners with silktouch and drop them
+# (ncluding the spawn egg)
+# turn off second option if you do not want craftable enchants.

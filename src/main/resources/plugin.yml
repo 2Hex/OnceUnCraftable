@@ -1,0 +1,15 @@
+name: Onceuncraftable
+version: ${project.version}
+main: me.hex.onceuncraftable.Onceuncraftable
+api-version: 1.16
+authors: [ 2Hex, Daloral ]
+description: Craft UnCraftable Items!
+commands:
+  mineablespawners:
+    description: OnceUncraftable's mine spawners! use /minespawners true/false if you want to toggle mining spawners and dropping items on/off
+    usage: /<command>
+    permission: once.mineable
+  craftenchants:
+    description: OnceUncraftable's craft enchants! use /craftenchants true/false if you want to toggle crafting  enchants on/off
+    usage: /<command>
+    permission: once.craftenchants

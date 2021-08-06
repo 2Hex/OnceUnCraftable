@@ -1,6 +1,7 @@
 package me.hex.onceuncraftable.events;
 
 import me.hex.onceuncraftable.Onceuncraftable;
+import me.hex.onceuncraftable.RecipesManager;
 import org.bukkit.Material;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.enchantments.Enchantment;
@@ -9,12 +10,19 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class Mineable implements Listener {
+    private static JavaPlugin plugin;
+
+    public Mineable(Onceuncraftable plugin) {
+
+        Mineable.plugin = plugin;
+    }
     @EventHandler
     public void onMine(BlockBreakEvent e){
 
-        if(Onceuncraftable.INSTANCE.getConfig().getBoolean("mine-spawners-with-silk-touch")){
+        if(plugin.getConfig().getBoolean("mine-spawners-with-silk-touch")){
             System.out.println("mine spawners is true.1");
         Material b = e.getBlock().getType();
             System.out.println("material is block 0");

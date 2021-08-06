@@ -8,7 +8,6 @@ public final class Onceuncraftable extends JavaPlugin {
     @Override
     public void onEnable() {
 
-
         getServer().getPluginManager().registerEvents(new Mineable(this), this);
         getCommand("mineablespawners").setExecutor(new Changeconfig());
         getCommand("craftenchants").setExecutor(new Changeconfig());

@@ -8,11 +8,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ChangeConfig implements CommandExecutor {
-    private static JavaPlugin plugin;
+    private final JavaPlugin plugin;
 
     public ChangeConfig(Onceuncraftable plugin) {
 
-        ChangeConfig.plugin = plugin;
+        this.plugin = plugin;
     }
 
     @Override

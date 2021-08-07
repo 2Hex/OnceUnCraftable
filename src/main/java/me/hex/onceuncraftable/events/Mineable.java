@@ -13,11 +13,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Mineable implements Listener {
-    private static JavaPlugin plugin;
+    private final JavaPlugin plugin;
 
     public Mineable(Onceuncraftable plugin) {
 
-        Mineable.plugin = plugin;
+        this.plugin = plugin;
     }
 
     @EventHandler

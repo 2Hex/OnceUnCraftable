@@ -116,7 +116,6 @@ public class ChangeConfig implements CommandExecutor {
                 return true;
             }
             sender.sendMessage(ChatColor.GREEN + "Done! Reloaded config.yml!");
-            plugin.saveConfig();
             plugin.reloadConfig();
         }
         return true;

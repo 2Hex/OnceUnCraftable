@@ -1,7 +1,6 @@
 package me.hex.onceuncraftable.events;
 
 import me.hex.onceuncraftable.Onceuncraftable;
-import me.hex.onceuncraftable.RecipesManager;
 import org.bukkit.Material;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.enchantments.Enchantment;
@@ -12,7 +11,6 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Mineable implements Listener {
@@ -41,14 +39,24 @@ public class Mineable implements Listener {
 
                                 int chance = plugin.getConfig().getInt("chance-to-spawn-spawner-eggs");
 
-                                if(ThreadLocalRandom.current().nextInt(100) < chance){
-                                        if (creature != EntityType.PIG) {
+                                if (ThreadLocalRandom.current().nextInt(100) < chance) {
+
+                                    if (creature != EntityType.PIG) {
+                                        if (plugin.getConfig().getInt("chance-to-spawn-spawner-eggs") == 0)
+                                            return;
+
+                                        Material mat = Material.getMaterial(spawn);
+                                        if (mat != null) {
                                             e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.getMaterial(spawn), 1));
                                         }
                                     }
+                                }
                             } else {
                                 if (creature != EntityType.PIG) {
-                                    e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.getMaterial(spawn), 1));
+                                    Material mat = Material.getMaterial(spawn);
+                                    if (mat != null) {
+                                        e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.getMaterial(spawn), 1));
+                                    }
                                 }
                             }
                         }

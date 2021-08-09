@@ -23,125 +23,124 @@ public class RecipesManager implements Listener {
     public enum Keys {
         ZOMBIE(new ItemStack(Material.ZOMBIE_SPAWN_EGG),
                 "RDR", "DZD", "RDR",
-                "DRZ", new Material[] {Material.DIAMOND, Material.ROTTEN_FLESH, Material.ZOMBIE_HEAD}),
+                "DRZ", new Material[]{Material.DIAMOND, Material.ROTTEN_FLESH, Material.ZOMBIE_HEAD}),
         SKELETON(new ItemStack(Material.SKELETON_SPAWN_EGG),
                 "BDB", "DSD", "BDB",
-                "DBS", new Material[] {Material.DIAMOND, Material.BONE_BLOCK, Material.SKELETON_SKULL}),
+                "DBS", new Material[]{Material.DIAMOND, Material.BONE_BLOCK, Material.SKELETON_SKULL}),
         CREEPER(new ItemStack(Material.CREEPER_SPAWN_EGG),
                 "TDT", "DCD", "TDT",
-                "DTC", new Material[] {Material.DIAMOND, Material.TNT, Material.CREEPER_HEAD}),
+                "DTC", new Material[]{Material.DIAMOND, Material.TNT, Material.CREEPER_HEAD}),
         ENDERMAN(new ItemStack(Material.ENDERMAN_SPAWN_EGG),
                 "CYC", "YNY", "CYC",
-                "CYN", new Material[] {Material.ENDER_CHEST, Material.ENDER_EYE, Material.NETHERITE_SCRAP}),
+                "CYN", new Material[]{Material.ENDER_CHEST, Material.ENDER_EYE, Material.NETHERITE_SCRAP}),
         EVOKER(new ItemStack(Material.EVOKER_SPAWN_EGG),
                 "NEN", "DTD", "GEG",
-                "ENGDT", new Material[] {Material.EMERALD_BLOCK, Material.NETHERITE_BLOCK, Material.GOLD_BLOCK, Material.DIAMOND_BLOCK, Material.TOTEM_OF_UNDYING}),
+                "ENGDT", new Material[]{Material.EMERALD_BLOCK, Material.NETHERITE_BLOCK, Material.GOLD_BLOCK, Material.DIAMOND_BLOCK, Material.TOTEM_OF_UNDYING}),
         VINDICATOR(new ItemStack(Material.VINDICATOR_SPAWN_EGG),
                 "EEE", "EME", "EEE",
-                "ME", new Material[] {Material.EMERALD_BLOCK, Material.IRON_BLOCK}),
+                "ME", new Material[]{Material.EMERALD_BLOCK, Material.IRON_BLOCK}),
         SHULKER(new ItemStack(Material.SHULKER_SPAWN_EGG),
                 "SSS", "SES", "SSS",
-                "SE", new Material[] {Material.SHULKER_SHELL, Material.ENDER_CHEST}),
+                "SE", new Material[]{Material.SHULKER_SHELL, Material.ENDER_CHEST}),
         PHANTOM(new ItemStack(Material.PHANTOM_SPAWN_EGG),
                 "PPP", "PMP", "PPP",
-                "MP", new Material[] {Material.MAGENTA_BED, Material.PHANTOM_MEMBRANE}),
+                "MP", new Material[]{Material.MAGENTA_BED, Material.PHANTOM_MEMBRANE}),
         SLIME(new ItemStack(Material.SLIME_SPAWN_EGG),
                 "SES", "BDB", "SES",
-                "BSDE", new Material[] {Material.SLIME_BLOCK, Material.SLIME_BALL, Material.DIAMOND, Material.GOLD_NUGGET}),
+                "BSDE", new Material[]{Material.SLIME_BLOCK, Material.SLIME_BALL, Material.DIAMOND, Material.GOLD_NUGGET}),
         WITHER(new ItemStack(Material.WITHER_SKELETON_SPAWN_EGG),
                 "CGC", "WWW", "CGC",
-                "CWG", new Material[] {Material.COAL, Material.WITHER_SKELETON_SKULL, Material.GOLD_NUGGET}),
+                "CWG", new Material[]{Material.COAL, Material.WITHER_SKELETON_SKULL, Material.GOLD_NUGGET}),
         SQUID(new ItemStack(Material.SQUID_SPAWN_EGG),
                 "CIC", "III", "CIC",
-                "IC", new Material[] {Material.INK_SAC, Material.COAL}),
+                "IC", new Material[]{Material.INK_SAC, Material.COAL}),
         SHEEP(new ItemStack(Material.SHEEP_SPAWN_EGG),
                 "RPR", "PBP", "RPR",
-                "RBP", new Material[] {Material.IRON_NUGGET, Material.BROWN_WOOL, Material.PINK_WOOL}),
+                "RBP", new Material[]{Material.IRON_NUGGET, Material.BROWN_WOOL, Material.PINK_WOOL}),
         DIAMOND_HORSE(new ItemStack(Material.DIAMOND_HORSE_ARMOR),
                 "DND", "LDL", "DLD",
-                "DLN", new Material[] {Material.DIAMOND, Material.LEATHER, Material.LEAD}),
+                "DLN", new Material[]{Material.DIAMOND, Material.LEATHER, Material.LEAD}),
         GOLD_HORSE(new ItemStack(Material.GOLDEN_HORSE_ARMOR),
                 "DND", "LDL", "DLD",
-                "DLN", new Material[] {Material.GOLD_INGOT, Material.LEATHER, Material.LEAD}),
+                "DLN", new Material[]{Material.GOLD_INGOT, Material.LEATHER, Material.LEAD}),
         DRAGON_EGG(new ItemStack(Material.DRAGON_EGG),
                 "NEN", "EHE", "NEN",
-                "HEN", new Material[] {Material.DRAGON_EGG, Material.NETHERITE_BLOCK, Material.END_CRYSTAL}),
+                "HEN", new Material[]{Material.DRAGON_EGG, Material.NETHERITE_BLOCK, Material.END_CRYSTAL}),
         SADDLE(new ItemStack(Material.SADDLE),
                 "LLL", "LLL", "LLL",
-                "L", new Material[] {Material.LEATHER}),
+                "L", new Material[]{Material.LEATHER}),
         IRON_HORSE(new ItemStack(Material.IRON_HORSE_ARMOR),
                 "INI", "LIL", "ILI",
-                "ILN", new Material[] {Material.IRON_INGOT, Material.LEATHER, Material.LEAD}),
+                "ILN", new Material[]{Material.IRON_INGOT, Material.LEATHER, Material.LEAD}),
         EXP(new ItemStack(Material.EXPERIENCE_BOTTLE),
                 "EBE", "BLB", "EBE",
-                "LEB", new Material[] {Material.LAPIS_BLOCK, Material.GLASS_BOTTLE, Material.EMERALD}),
+                "LEB", new Material[]{Material.LAPIS_BLOCK, Material.GLASS_BOTTLE, Material.EMERALD}),
         ENCH_SILK(ItemStacks.createBookStack(Enchantment.SILK_TOUCH),
                 "LEL", "GBG", "LEL",
-                "LGEB", new Material[] {Material.LAPIS_BLOCK, Material.GLASS_BOTTLE, Material.EMERALD, Material.BOOK}),
+                "LGEB", new Material[]{Material.LAPIS_BLOCK, Material.GLASS_BOTTLE, Material.EMERALD, Material.BOOK}),
         ENCH_EFF((ItemStacks.createBookStack(Enchantment.DIG_SPEED)),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.QUARTZ_BLOCK, Material.BOOK}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.QUARTZ_BLOCK, Material.BOOK}),
         ENCH_UNB(ItemStacks.createBookStack(Enchantment.DURABILITY),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.OBSIDIAN, Material.BOOK}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.OBSIDIAN, Material.BOOK}),
         ENCH_SHA(ItemStacks.createBookStack(Enchantment.DAMAGE_ALL),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.GOLD_INGOT, Material.DIAMOND}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.GOLD_INGOT, Material.DIAMOND}),
         ENCH_MN(ItemStacks.createBookStack(Enchantment.MENDING),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.NETHERITE_SCRAP, Material.NETHER_STAR}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.NETHERITE_SCRAP, Material.NETHER_STAR}),
         ENCH_SM((ItemStacks.createBookStack(Enchantment.DAMAGE_UNDEAD)),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.ROTTEN_FLESH}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.ROTTEN_FLESH}),
         ENCH_SQ(ItemStacks.createBookStack(Enchantment.DAMAGE_ARTHROPODS),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.SPIDER_EYE}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.SPIDER_EYE}),
         ENCH_QR(ItemStacks.createBookStack(Enchantment.PROTECTION_ENVIRONMENTAL),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.IRON_BARS}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.IRON_BARS}),
         ENCH_BL(ItemStacks.createBookStack(Enchantment.PROTECTION_EXPLOSIONS),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.TNT}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.TNT}),
         ENCH_QF(ItemStacks.createBookStack(Enchantment.PROTECTION_FALL),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.IRON_BOOTS}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.IRON_BOOTS}),
         ENCH_PF(ItemStacks.createBookStack(Enchantment.PROTECTION_FIRE),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.FLINT_AND_STEEL}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.FLINT_AND_STEEL}),
         ENCH_QQ(ItemStacks.createBookStack(Enchantment.PROTECTION_PROJECTILE),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.ARROW}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.IRON_BLOCK, Material.ARROW}),
         ENCH_AF(ItemStacks.createBookStack(Enchantment.FIRE_ASPECT),
                 "LGL", "GBG", "LGL",
-                "LGB", new Material[] {Material.LAPIS_BLOCK, Material.DIAMOND, Material.FLINT_AND_STEEL}),
+                "LGB", new Material[]{Material.LAPIS_BLOCK, Material.DIAMOND, Material.FLINT_AND_STEEL}),
         END_ROD(new ItemStack(Material.END_ROD),
                 "   ", " B ", " D ",
-                "DB", new Material[] {Material.DIAMOND, Material.BLAZE_ROD}),
+                "DB", new Material[]{Material.DIAMOND, Material.BLAZE_ROD}),
         ENCH_CH(ItemStacks.createBookStack(Enchantment.CHANNELING),
                 "IDI", "DBD", "IDI",
-                "IDB", new Material[] {Material.ICE, Material.DIAMOND, Material.BOOK}),
+                "IDB", new Material[]{Material.ICE, Material.DIAMOND, Material.BOOK}),
         SPONGE(new ItemStack(Material.SPONGE),
                 "SSS", "SSS", "SSS",
-                "S", new Material[] {Material.PUFFERFISH}),
+                "S", new Material[]{Material.PUFFERFISH}),
         COBWEB(new ItemStack(Material.COBWEB),
                 "S S", " S ", "S S",
-                "S", new Material[] {Material.STRING}),
+                "S", new Material[]{Material.STRING}),
         BROWN_MUSHROOM(new ItemStack(Material.BROWN_MUSHROOM_BLOCK),
                 "SSS", "SSS", "SSS",
-                "S", new Material[] {Material.BROWN_MUSHROOM}),
+                "S", new Material[]{Material.BROWN_MUSHROOM}),
         RED_MUSHROOM(new ItemStack(Material.RED_MUSHROOM_BLOCK),
                 "SSS", "SSS", "SSS",
-                "S", new Material[] {Material.RED_MUSHROOM}),
+                "S", new Material[]{Material.RED_MUSHROOM}),
         DRAGON_HEAD(new ItemStack(Material.DRAGON_HEAD),
                 "EZE", "WGS", "ECE",
-                "ZWCEGS", new Material[] {Material.ZOMBIE_HEAD, Material.WITHER_SKELETON_SKULL, Material.CREEPER_HEAD, Material.END_CRYSTAL, Material.DRAGON_EGG, Material.SKELETON_SKULL}),
+                "ZWCEGS", new Material[]{Material.ZOMBIE_HEAD, Material.WITHER_SKELETON_SKULL, Material.CREEPER_HEAD, Material.END_CRYSTAL, Material.DRAGON_EGG, Material.SKELETON_SKULL}),
         NETHER_WART(new ItemStack(Material.NETHER_WART),
                 "   ", " W ", " S ",
-                "WS", new Material[] {Material.WHEAT_SEEDS, Material.SOUL_SAND}),
+                "WS", new Material[]{Material.WHEAT_SEEDS, Material.SOUL_SAND}),
         SPAWNER(new ItemStack(Material.SPAWNER),
                 "CIC", "IDI", "CIC",
-                "CDI", new Material[] {Material.CHAIN, Material.DIAMOND_BLOCK, Material.IRON_BARS});
-
+                "CDI", new Material[]{Material.CHAIN, Material.DIAMOND_BLOCK, Material.IRON_BARS});
 
 
         public final ItemStack itemStack;
@@ -151,7 +150,7 @@ public class RecipesManager implements Listener {
 
         Keys(ItemStack item, String matrix1, String matrix2, String matrix3, String materialKey, Material[] materials) {
 
-            matrix = new String[] {matrix1, matrix2, matrix3};
+            matrix = new String[]{matrix1, matrix2, matrix3};
             this.materialKey = materialKey;
             this.materials = materials;
             this.itemStack = item;
@@ -167,7 +166,7 @@ public class RecipesManager implements Listener {
     public RecipesManager(JavaPlugin plugin) {
 
         RecipesManager.plugin = plugin;
-        Arrays.stream(RecipesManager.Keys.values()).forEach(key -> new NamespacedKey(RecipesManager.plugin, key.name().toLowerCase()));
+
         addRecipes();
     }
 
@@ -182,9 +181,13 @@ public class RecipesManager implements Listener {
 
             if (plugin.getConfig().getStringList("disabled_recipes").contains(data.name()))
                 return;
-            if(!plugin.getConfig().getBoolean("craft-enchants") && data.name().contains("ENCH"))
+            if (!plugin.getConfig().getBoolean("craft-enchants") && data.name().contains("ENCH"))
                 return;
-            ShapedRecipe recipe = new ShapedRecipe(data.getKey(), data.itemStack);
+
+            // Added this line
+            NamespacedKey namespacedKey = new NamespacedKey(plugin, data.name().toLowerCase());
+
+            ShapedRecipe recipe = new ShapedRecipe(namespacedKey, data.itemStack);
             recipe.shape(data.matrix);
 
             if (data.materialKey.length() != data.materials.length) {
@@ -192,7 +195,7 @@ public class RecipesManager implements Listener {
                 return;
             }
 
-            for(int i = 0; i < data.materialKey.length(); i++) {
+            for (int i = 0; i < data.materialKey.length(); i++) {
                 recipe.setIngredient(data.materialKey.charAt(i), data.materials[i]);
             }
             Bukkit.addRecipe(recipe);
@@ -206,10 +209,13 @@ public class RecipesManager implements Listener {
      */
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-
         Player player = event.getPlayer();
 
         for(Keys recipeKey: Keys.values()) {
+            if (plugin.getConfig().getStringList("disabled_recipes").contains(recipeKey.name()))
+                continue;
+            if(!plugin.getConfig().getBoolean("craft-enchants") && recipeKey.name().contains("ENCH"))
+                continue;
             player.discoverRecipe(recipeKey.getKey());
         }
     }

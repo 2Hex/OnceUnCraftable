@@ -18,11 +18,11 @@ public class ChangeConfig implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equals("mineablespawners")) {
-
             if (!sender.hasPermission("once.mineable")) {
                 sender.sendMessage("You don't have access to this command!. you need the permission 'once.mineable'.");
                 return false;
             }
+
             if (!(args.length > 0)) {
                 return false;
             }
@@ -65,10 +65,12 @@ public class ChangeConfig implements CommandExecutor {
                 sender.sendMessage("You don't have access to this command!. you need the permission 'once.craftenchants'.");
                 return true;
             }
+
             if (!(args.length > 0)) {
                 sender.sendMessage("/craftwnchants true/false");
                 return false;
             }
+
             if (args[0].equals("true")) {
                 if (plugin.getConfig().getBoolean("craft-enchants")) {
                     sender.sendMessage(ChatColor.GREEN + "It's Already true!");
@@ -87,18 +89,35 @@ public class ChangeConfig implements CommandExecutor {
                     sender.sendMessage(ChatColor.GREEN + "It's Already false!");
                     return true;
                 }
+
                 plugin.getConfig().set("craft-enchants", false);
                 sender.sendMessage(ChatColor.GREEN + "Craft enchanted is turned off!");
                 plugin.saveConfig();
                 return true;
             }
 
-
             if (!(args[0].equalsIgnoreCase("true") || !(args[0].equalsIgnoreCase("false")))) {
 
                 sender.sendMessage("You can only set craftable enchants to 'true' or 'false'!");
             }
             return true;
+        }
+        if(command.getName().equals("onceuncraftable")){
+            if(!sender.hasPermission("once.reload")){
+                sender.sendMessage(ChatColor.RED+ "You do not have required permissions. (once.reload)!");
+                return true;
+            }
+            if(args.length == 0){
+                return false;
+            }
+            if(!args[0].equals("reload")){
+                sender.sendMessage(ChatColor.RED + "Use /onceuncraftable reload to reload the config!");
+                sender.sendMessage(ChatColor.GREEN + "Or /help onceuncraftable");
+                return true;
+            }
+            sender.sendMessage(ChatColor.GREEN + "Done! Reloaded config.yml!");
+            plugin.saveConfig();
+            plugin.reloadConfig();
         }
         return true;
     }

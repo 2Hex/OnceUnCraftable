@@ -13,3 +13,7 @@ commands:
     description: OnceUncraftable's craft enchants! use /craftenchants true/false if you want to toggle crafting  enchants on/off
     usage: /<command>
     permission: once.craftenchants
+  onceuncraftable:
+    description: Use /onceuncraftable reload to reload the config.yml
+    usage: /<command>
+    permission: once.reload

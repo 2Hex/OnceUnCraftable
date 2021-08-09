@@ -138,8 +138,21 @@ public class RecipesManager implements Listener {
         NETHER_WART(new ItemStack(Material.NETHER_WART),
                 "   ", " W ", " S ",
                 "WS", new Material[]{Material.WHEAT_SEEDS, Material.SOUL_SAND}),
+        COW(new ItemStack(Material.COW_SPAWN_EGG),
+                "MCM", "LCL", "MCM",
+                "LCM", new Material[]{Material.LEATHER_CHESTPLATE, Material.DIAMOND_HOE, Material.MILK_BUCKET}),
+        BEE(new ItemStack(Material.BEE_SPAWN_EGG),
+                "HBH", "HDH", "BHB",
+                "HBD", new Material[]{Material.HONEY_BLOCK, Material.HONEYCOMB_BLOCK, Material.DIAMOND_HOE}),
+        WITHER_ROSE(new ItemStack(Material.WITHER_ROSE),
+                "   ", " W ", " S ",
+                "WS", new Material[]{Material.POPPY, Material.SOUL_SAND}),
+        GHAST_TIER(new ItemStack(Material.GHAST_TEAR),
+                "MCM", "LCL", "MCM",
+                "LCM", new Material[]{Material.NETHER_QUARTZ_ORE, Material.BLAZE_ROD, Material.FIRE_CHARGE}),
         SPAWNER(new ItemStack(Material.SPAWNER),
                 "CIC", "IDI", "CIC",
+
                 "CDI", new Material[]{Material.CHAIN, Material.DIAMOND_BLOCK, Material.IRON_BARS});
 
 

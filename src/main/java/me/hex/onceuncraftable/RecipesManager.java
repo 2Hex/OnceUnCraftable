@@ -65,7 +65,7 @@ public class RecipesManager implements Listener {
                 "DLN", new Material[]{Material.GOLD_INGOT, Material.LEATHER, Material.LEAD}),
         DRAGON_EGG(new ItemStack(Material.DRAGON_EGG),
                 "NEN", "EHE", "NEN",
-                "HEN", new Material[]{Material.DRAGON_EGG, Material.NETHERITE_BLOCK, Material.END_CRYSTAL}),
+                "HEN", new Material[]{Material.DRAGON_HEAD, Material.NETHERITE_BLOCK, Material.END_CRYSTAL}),
         SADDLE(new ItemStack(Material.SADDLE),
                 "LLL", "LLL", "LLL",
                 "L", new Material[]{Material.LEATHER}),

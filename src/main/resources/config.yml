@@ -3,6 +3,4 @@ craft-enchants: true
 #  turn on first option if you want players to be able to break spawners with silktouch and drop them
 # (including the spawn egg)
 # Turn off second option if you do not want craftable enchants.
-# add a recipe to the disabled list to disable it.
-# Recipes IDs in: https://www.spigotmc.org/resources/onceuncraftable.94632/
 chance-to-spawn-spawner-eggs: 100

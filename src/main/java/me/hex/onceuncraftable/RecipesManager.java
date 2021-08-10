@@ -47,6 +47,7 @@ public class RecipesManager implements Listener {
 
             if (order == null) {
                 plugin.getLogger().warning("Malformed(order) Recipe for " + entry);
+                continue;
             }
             if(material == null) {
                 plugin.getLogger().warning("Malformed(material) Recipe for " + entry);
@@ -55,6 +56,7 @@ public class RecipesManager implements Listener {
 
             if (order != null && order.length() != items.length) {
                 plugin.getLogger().warning("Malformed(length) Recipe for " + entry);
+                continue;
             }
             ItemStack itemStack;
 
@@ -80,6 +82,7 @@ public class RecipesManager implements Listener {
         }
                 if(key == null)
                     continue;
+
             recipes.put(key, recipe);
             Bukkit.addRecipe(recipe);
         }
@@ -98,8 +101,6 @@ public class RecipesManager implements Listener {
         Player player = event.getPlayer();
 
         for (NamespacedKey recipe : recipes.keySet()) {
-            if (plugin.getCustomConfig().getStringList("disabled_recipes").contains(recipe.getKey()))
-                continue;
             if (!plugin.getCustomConfig().getBoolean("craft-enchants") && recipe.getKey().contains("ench_"))
                 continue;
             player.discoverRecipe(recipe);

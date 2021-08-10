@@ -6,16 +6,3 @@ craft-enchants: true
 # add a recipe to the disabled list to disable it.
 # Recipes IDs in: https://www.spigotmc.org/resources/onceuncraftable.94632/
 chance-to-spawn-spawner-eggs: 100
-disabled_recipes:
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -

@@ -24,45 +24,40 @@ public class Mineable implements Listener {
 
     @EventHandler
     public void onMine(BlockBreakEvent e) {
-        if (plugin.getConfig().getBoolean("mine-spawners-with-silk-touch")) {
-            Material b = e.getBlock().getType();
 
-            if (b == Material.SPAWNER) {
-                if (e.getPlayer().getInventory().getItemInMainHand() != null) {
-                    if (e.getPlayer().getInventory().getItemInMainHand().containsEnchantment(Enchantment.SILK_TOUCH)) {
+        if (!plugin.getConfig().getBoolean("mine-spawners-with-silk-touch")) return;
 
-                        e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.SPAWNER, 1));
-                        if (e.getBlock().getState() instanceof CreatureSpawner) {
-                            EntityType creature = ((CreatureSpawner) e.getBlock().getState()).getSpawnedType();
-                            String spawn = creature.name().toUpperCase().replace(" ", "_") + "_SPAWN_EGG";
-                            if (plugin.getConfig().isConfigurationSection("chance-to-spawn-spawner-eggs")) {
+        Material b = e.getBlock().getType();
 
-                                int chance = plugin.getConfig().getInt("chance-to-spawn-spawner-eggs");
+        if (b != Material.SPAWNER) return;
+        if (e.getPlayer().getInventory().getItemInMainHand() == null) return;
+        if (!e.getPlayer().getInventory().getItemInMainHand().containsEnchantment(Enchantment.SILK_TOUCH)) return;
 
-                                if (ThreadLocalRandom.current().nextInt(100) < chance) {
+        e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.SPAWNER, 1));
+        if (!(e.getBlock().getState() instanceof CreatureSpawner)) return;
 
-                                    if (creature != EntityType.PIG) {
-                                        if (plugin.getConfig().getInt("chance-to-spawn-spawner-eggs") == 0)
-                                            return;
+        EntityType creature = ((CreatureSpawner) e.getBlock().getState()).getSpawnedType();
+        String spawn = creature.name().toUpperCase().replace(" ", "_") + "_SPAWN_EGG";
 
-                                        Material mat = Material.getMaterial(spawn);
-                                        if (mat != null) {
-                                            e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.getMaterial(spawn), 1));
-                                        }
-                                    }
-                                }
-                            } else {
-                                if (creature != EntityType.PIG) {
-                                    Material mat = Material.getMaterial(spawn);
-                                    if (mat != null) {
-                                        e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.getMaterial(spawn), 1));
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        if (!plugin.getConfig().isConfigurationSection("chance-to-spawn-spawner-eggs")) {
+
+            if (creature == EntityType.PIG) return;
+            Material mat = Material.getMaterial(spawn);
+            if (mat == null) return;
+            e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.getMaterial(spawn), 1));
         }
+
+        int chance = plugin.getConfig().getInt("chance-to-spawn-spawner-eggs");
+
+        if (!(ThreadLocalRandom.current().nextInt(100) < chance)) return;
+        if (creature == EntityType.PIG) return;
+        if (plugin.getConfig().getInt("chance-to-spawn-spawner-eggs") == 0) return;
+
+        Material mat = Material.getMaterial(spawn);
+        if (mat == null) return;
+
+        e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), new ItemStack(Material.getMaterial(spawn), 1));
     }
 }
+
+

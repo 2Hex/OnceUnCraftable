@@ -1,0 +1,472 @@
+# Matrix: Crafting table grid.
+# Order: so as an example. first letter in order is D, first item in items in Diamond, that means in
+# matrix you can use D as a value that represents "Diamond".
+# itemStack represents the result of the recipe, if you want an enchant name the recipe name
+# for example zombie, to ench_'enchantName'. and change the itemStack: value to the enchant name.
+# This file is seperated from config.yml, which means if you break a recipe, only the recipe
+# will get messed, not the whole plugin. ;)
+# Also to remove a recipe you just remove the section or you can also edit it to your liking.
+
+recipes:
+  zombie:
+    itemStack: ZOMBIE_SPAWN_EGG
+    matrix:
+      - "RDR"
+      - "DZD"
+      - "RDR"
+    order: "DRZ"
+    items:
+      - "DIAMOND"
+      - "ROTTEN_FLESH"
+      - "ZOMBIE_HEAD"
+  skeleton:
+    itemStack: SKELETON_SPAWN_EGG
+    matrix:
+      - "RDR"
+      - "DZD"
+      - "RDR"
+    order: "DRZ"
+    items:
+      - "DIAMOND"
+      - "BONE_BLOCK"
+      - "SKELETON_SKULL"
+  creeper:
+    itemStack: CREEPER_SPAWN_EGG
+    matrix:
+      - "RDR"
+      - "DZD"
+      - "RDR"
+    order: "DRZ"
+    items:
+      - "DIAMOND"
+      - "TNT"
+      - "CREEPER_HEAD"
+  enderman:
+    itemStack: CREEPER_SPAWN_EGG
+    matrix:
+      - "RDR"
+      - "DZD"
+      - "RDR"
+    order: "DRZ"
+    items:
+      - "ENDER_CHEST"
+      - "ENDER_EYE"
+      - "NETHERITE_SCRAP"
+  evoker:
+    itemStack: EVOKER_SPAWN_EGG
+    matrix:
+      - "NEN"
+      - "DTD"
+      - "GEG"
+    order: "ENGDT"
+    items:
+      - "EMERALD_BLOCK"
+      - "NETHERITE_BLOCK"
+      - "GOLD_BLOCK"
+      - "DIAMOND_BLOCK"
+      - "TOTEM_OF_UNDYING"
+  vindicator:
+    itemStack: VINDICATOR_SPAWN_EGG
+    matrix:
+      - "EEE"
+      - "EME"
+      - "EEE"
+    order: "EM"
+    items:
+      - "IRON_BLOCK"
+      - "EMERALD_BLOCK"
+  shulker:
+    itemStack: SHULKER_SPAWN_EGG
+    matrix:
+      - "SSS"
+      - "SES"
+      - "SSS"
+    order: "SE"
+    items:
+      - "SHULKER_SHELL"
+      - "ENDER_CHEST"
+  phantom:
+    itemStack: PHANTOM_SPAWN_EGG
+    matrix:
+      - "MMM"
+      - "MBM"
+      - "MMM"
+    order: "MB"
+    items:
+      - "PHANTOM_MEMBRANE"
+      - "MAGENTA_BED"
+  slime:
+    itemStack: SLIME_SPAWN_EGG
+    matrix:
+      - "SES"
+      - "BDB"
+      - "SES"
+    order: "BSDE"
+
+    items:
+      - "SLIME_BLOCK"
+      - "SLIME_BALL"
+      - "DIAMOND"
+      - "GOLD_NUGGET"
+  wither:
+    itemStack: WITHER_SKELETON_SPAWN_EGG
+    matrix:
+      - "CGC"
+      - "WWW"
+      - "CGC"
+    order: "CWG"
+    items:
+      - "COAL"
+      - "WITHER_SKELETON"
+      - "GOLD_NUGGET"
+  squid:
+    itemStack: SQUID_SPAWN_EGG
+    matrix:
+      - "CIC"
+      - "III"
+      - "CIC"
+    order: "IC"
+    items:
+      - "INK_SAC"
+      - "COAL"
+  sheep:
+    itemStack: SHEEP_SPAWN_EGG
+    matrix:
+      - "RPR"
+      - "PBP"
+      - "RPR"
+    order: "RPB"
+    items:
+      - "IRON_NUGGET"
+      - "BROWN_WOOL"
+      - "PINK_WOOL"
+  diamond_horse:
+    itemStack: DIAMOND_HORSE_ARMOR
+    matrix:
+      - "DND"
+      - "LDL"
+      - "DLD"
+    order: "DLN"
+    items:
+      - "DIAMOND"
+      - "LEATHER"
+      - "LEAD"
+
+  golden_horse:
+    itemStack: GOLDEN_HORSE_ARMOR
+    matrix:
+      - "DND"
+      - "LDL"
+      - "DLD"
+    order: "DLN"
+    items:
+      - "GOLD_INGOT"
+      - "LEATHER"
+      - "LEAD"
+  dragon_egg:
+    itemStack: DRAGON_EGG
+    matrix:
+      - "NEN"
+      - "EHE"
+      - "NEN"
+    order: "HEN"
+    items:
+      - "DRAGON_HEAD"
+      - "NETHERITE_BLOCK"
+      - "END_CRYSTAL"
+
+  saddle:
+    itemStack: SADDLE
+    matrix:
+      - "LLL"
+      - "LLL"
+      - "LLL"
+    order: "L"
+    items:
+      - "LEATHER"
+  iron_horse:
+    itemStack: IRON_HORSE_ARMOR
+    matrix:
+      - "INI"
+      - "LIL"
+      - "ILI"
+    order: "ILN"
+    items:
+      - "IRON_INGOT"
+      - "LEATHER"
+      - "LEAD"
+  exp:
+    itemStack: EXPERIENCE_BOTTLE
+    matrix:
+      - "EBE"
+      - "BLB"
+      - "EBE"
+    order: "LEB"
+    items:
+      - "LAPIS_BLOCK"
+      - "GLASS_BOTTLE"
+      - "EMERALD"
+
+  sponge:
+    itemStack: SPONGE
+    matrix:
+      - "SSS"
+      - "SSS"
+      - "SSS"
+    order: "S"
+    items:
+      - "PUFFERFISH"
+  cobweb:
+    itemStack: COBWEB
+    matrix:
+      - "S S"
+      - " S "
+      - "S S"
+    order: "S"
+    items:
+      - "STRING"
+
+  brown_mush:
+    itemStack: BROWN_MUSHROOM_BLOCK
+    matrix:
+      - "BBB"
+      - "BBB"
+      - "BBB"
+    order: "B"
+    items:
+      - "BROWN_MUSHROOM"
+
+  red_mush:
+    itemStack: RED_MUSHROOM_BLOCK
+    matrix:
+      - "BBB"
+      - "BBB"
+      - "BBB"
+    order: "B"
+    items:
+      - "RED_MUSHROOM"
+  dragon_head:
+    itemStack: DRAGON_HEAD
+    matrix:
+      - "WZW"
+      - "WGS"
+      - "ECE"
+    order: "ZWCEGS"
+    items:
+      - "ZOMBIE_HEAD"
+      - "WITHER_SKELETON_SKULL"
+      - "CREEPER_HEAD"
+      - "END_CRYSTAL"
+      - "DRAGON_EGG"
+      - "SKELETON_SKULL"
+
+  nether_wart:
+    itemStack: NETHER_WART
+    matrix:
+      - "   "
+      - " W "
+      - " S "
+    order: "WS"
+    items:
+      - "WHEAT_SEEDS"
+      - "SOUL_SAND"
+  cow:
+    itemStack: COW_SPAWN_EGG
+    matrix:
+      - "MCM"
+      - "LCL"
+      - "MCM"
+    order: "LCM"
+    items:
+      - "LEATHER_CHESTPLATE"
+      - "DIAMOND_HOE"
+      - "MILK_BUCKET"
+  bee:
+    itemStack: END_ROD
+    matrix:
+      - "HBH"
+      - "HDH"
+      - "BHB"
+    order: "HBD"
+    items:
+      - "HONEY_BLOCK"
+      - "HONEYCOMB_BLOCK"
+      - "DIAMOND_HOE"
+  wither_rose:
+    itemStack: WITHER_ROSE
+    matrix:
+      - "   "
+      - " P "
+      - " S "
+    order: "SP"
+    items:
+      - "SOUL_SAND"
+      - "POPPY"
+  ghast_tear:
+    itemStack: GHAST_TEAR
+    matrix:
+      - "MCM"
+      - "LCL"
+      - "MCM"
+    order: "LCM"
+    items:
+      - "NETHER_QUARTZ_ORE"
+      - "BLAZE_ROD"
+      - "FIRE_CHARGE"
+  spawner:
+    itemStack: SPAWNER
+    matrix:
+      - "CIC"
+      - "IDI"
+      - "CIC"
+    order: "CDI"
+    items:
+      - "CHAIN"
+      - "DIAMOND_BLOCK"
+      - "IRON_BARS"
+
+  ench_ch:
+    itemStack: CHANNELING
+    matrix:
+      - "IDI"
+      - "DBD"
+      - "IDI"
+    order: "IDB"
+    items:
+      - "ICE"
+      - "DIAMOND"
+      - "BOOK"
+  ench_af:
+    itemStack: FIRE_ASPECT
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LBG"
+    items:
+      - "LAPIS_BLOCK"
+      - "DIAMOND"
+      - "FLINT_AND_STEEL"
+
+  ench_prot_proj:
+    itemStack: PROJECTILE_PROTECTION
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "IRON_BLOCK"
+      - "ARROW"
+  ench_prot_fire:
+    itemStack: FIRE_PROTECTION
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "IRON_BLOCK"
+      - "FLINT_AND_STEEL"
+  ench_prot_fall:
+    itemStack: FEATHER_FALLING
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "IRON_BLOCK"
+      - "IRON_BOOTS"
+  ench_prot_explosions:
+    itemStack: BLAST_PROTECTION
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "IRON_BLOCK"
+      - "TNT"
+  ench_spider:
+    itemStack: BANE_OF_ARTHROPODS
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "IRON_BLOCK"
+      - "SPIDER_EYE"
+  ench_undead:
+    itemStack: SMITE
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "IRON_BLOCK"
+      - "ROTTEN_FLESH"
+  ench_mending:
+    itemStack: MENDING
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "NETHERITE_SCRAP"
+      - "NETHER_STAR"
+  ench_sharp:
+    itemStack: SHARPNESS
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "DIAMOND"
+      - "GOLD_INGOT"
+  ench_unbreaking:
+    itemStack: UNBREAKING
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "OBSIDIAN"
+      - "BOOK"
+  ench_efficiency:
+    itemStack: EFFICIENCY
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "LGL"
+    order: "LGB"
+    items:
+      - "LAPIS_BLOCK"
+      - "QUARTZ_BLOCK"
+      - "BOOK"
+  ench_silk_touch:
+    itemStack: SILK_TOUCH
+    matrix:
+      - "LGL"
+      - "GBG"
+      - "EGE"
+    order: "LGEB"
+    items:
+      - "LAPIS_BLOCK"
+      - "GLASS"
+      - "EMERALD"
+      - "BOOK"

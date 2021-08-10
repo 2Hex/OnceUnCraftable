@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
 
-public final class Onceuncraftable extends JavaPlugin {
+public final class OnceUnCraftable extends JavaPlugin {
     private File customConfigFile;
     private FileConfiguration customConfig;
     @Override

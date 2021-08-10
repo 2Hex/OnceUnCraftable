@@ -1,6 +1,6 @@
 package me.hex.onceuncraftable.events;
 
-import me.hex.onceuncraftable.Onceuncraftable;
+import me.hex.onceuncraftable.OnceUnCraftable;
 import org.bukkit.Material;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.enchantments.Enchantment;
@@ -17,7 +17,7 @@ public class Mineable implements Listener {
 
     private final JavaPlugin plugin;
 
-    public Mineable(Onceuncraftable plugin) {
+    public Mineable(OnceUnCraftable plugin) {
 
         this.plugin = plugin;
     }

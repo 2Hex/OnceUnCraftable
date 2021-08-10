@@ -18,12 +18,9 @@ import java.util.Map;
 
 public class RecipesManager implements Listener {
 
-    /**
-     * Enum of all recipes
-     */
     private final Map<NamespacedKey, ShapedRecipe> recipes = new HashMap<>();
 
-    public RecipesManager(Onceuncraftable plugin) {
+    public RecipesManager(OnceUnCraftable plugin) {
 
         RecipesManager.plugin = plugin;
 
@@ -72,14 +69,14 @@ public class RecipesManager implements Listener {
             ShapedRecipe recipe = new ShapedRecipe(key, itemStack);
 
             recipe.shape(matrix);
-            if (order != null){
+            if (order != null) {
                 for (int i = 0; i < order.length(); i++) {
                     Material matchitems = Material.matchMaterial(items[i]);
                     if (matchitems != null) {
                         recipe.setIngredient(order.charAt(i), matchitems);
                     }
                 }
-        }
+            }
                 if(key == null)
                     continue;
 
@@ -88,14 +85,8 @@ public class RecipesManager implements Listener {
         }
     }
 
-    private static Onceuncraftable plugin;
+    private static OnceUnCraftable plugin;
 
-
-    /**
-     * Set all recipes as discovered for the Player.
-     *
-     * @param event
-     */
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();

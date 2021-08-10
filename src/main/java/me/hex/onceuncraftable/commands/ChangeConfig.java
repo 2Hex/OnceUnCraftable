@@ -1,6 +1,6 @@
 package me.hex.onceuncraftable.commands;
 
-import me.hex.onceuncraftable.Onceuncraftable;
+import me.hex.onceuncraftable.OnceUnCraftable;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ChangeConfig implements CommandExecutor {
     private final JavaPlugin plugin;
 
-    public ChangeConfig(Onceuncraftable plugin) {
+    public ChangeConfig(OnceUnCraftable plugin) {
 
         this.plugin = plugin;
     }

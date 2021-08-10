@@ -1,6 +1,6 @@
-name: Onceuncraftable
+name: OnceUnCraftable
 version: ${project.version}
-main: me.hex.onceuncraftable.Onceuncraftable
+main: me.hex.onceuncraftable.OnceUnCraftable
 api-version: 1.16
 authors: [ 2Hex, Daloral ]
 description: Craft UnCraftable Items!

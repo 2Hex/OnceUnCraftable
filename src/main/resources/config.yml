@@ -4,3 +4,10 @@ craft-enchants: true
 # (including the spawn egg)
 # Turn off second option if you do not want craftable enchants.
 chance-to-spawn-spawner-eggs: 100
+netherite-upgrade-req: 1
+# vanilla is an item without item meta
+disabled-vanilla-recipes:
+  - "BEDROCK"
+# basically custom = has item meta
+disabled-custom-recipes:
+  - "BEDROCK"

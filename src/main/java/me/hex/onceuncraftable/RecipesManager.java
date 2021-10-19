@@ -11,11 +11,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
-
 public class RecipesManager implements Listener {
 
     private final Map<NamespacedKey, ShapedRecipe> recipes = new HashMap<>();
@@ -28,7 +29,6 @@ public class RecipesManager implements Listener {
         if (section == null) return;
 
         for (String entry : section.getKeys(false)) {
-
             ConfigurationSection data = section.getConfigurationSection(entry);
             if (data == null) {
                 plugin.getLogger().warning("Malformed Recipe for(data) " + entry);
@@ -41,12 +41,13 @@ public class RecipesManager implements Listener {
             String[] matrix = data.getStringList("matrix").toArray(new String[0]);
             String order = data.getString("order");
             String[] items = data.getStringList("items").toArray(new String[0]);
+            ItemStack itemStack;
 
             if (order == null) {
                 plugin.getLogger().warning("Malformed(order) Recipe for " + entry);
                 continue;
             }
-            if(material == null) {
+            if (material == null) {
                 plugin.getLogger().warning("Malformed(material) Recipe for " + entry);
                 continue;
             }
@@ -55,7 +56,6 @@ public class RecipesManager implements Listener {
                 plugin.getLogger().warning("Malformed(length) Recipe for " + entry);
                 continue;
             }
-            ItemStack itemStack;
 
             if (entry.contains("ench_")) {
                 itemStack = ItemStacks.createBookStack(Enchantment.getByKey(NamespacedKey.minecraft(material.toLowerCase())));
@@ -65,24 +65,27 @@ public class RecipesManager implements Listener {
                     continue;
                 itemStack = new ItemStack(matchMat);
             }
-
             ShapedRecipe recipe = new ShapedRecipe(key, itemStack);
-
             recipe.shape(matrix);
             if (order != null) {
                 for (int i = 0; i < order.length(); i++) {
                     Material matchitems = Material.matchMaterial(items[i]);
-                    if (matchitems != null) {
+                    if (matchitems != null)
                         recipe.setIngredient(order.charAt(i), matchitems);
-                    }
                 }
             }
-                if(key == null)
-                    continue;
+            if (key == null)
+                continue;
 
             recipes.put(key, recipe);
+            if (data.getBoolean("override"))
+                removeRecipe(Material.getMaterial(material), false);
             Bukkit.addRecipe(recipe);
         }
+
+        loopRemoving(true, "custom");
+        loopRemoving(false, "vanilla");
+
     }
 
     private static OnceUnCraftable plugin;
@@ -92,9 +95,26 @@ public class RecipesManager implements Listener {
         Player player = event.getPlayer();
 
         for (NamespacedKey recipe : recipes.keySet()) {
-            if (!plugin.getCustomConfig().getBoolean("craft-enchants") && recipe.getKey().contains("ench_"))
+            if (!plugin.getConfig().getBoolean("craft-enchants") && recipe.getKey().contains("ench_"))
                 continue;
             player.discoverRecipe(recipe);
+        }
+    }
+
+    private void removeRecipe(Material mat, boolean custom) {
+        Iterator<Recipe> it = Bukkit.recipeIterator();
+        while (it.hasNext()) {
+            if (!custom && it.next().getResult().getType() == mat) {
+                it.remove();
+                return;
+            }
+            if (it.next().getResult().getType() == mat && it.next().getResult().hasItemMeta()) it.remove();
+        }
+    }
+
+    private void loopRemoving(boolean custom, String st) {
+        for (String s : plugin.getConfig().getStringList("disabled-" + st + "-recipes")) {
+            removeRecipe(Material.getMaterial(s), custom);
         }
     }
 }
